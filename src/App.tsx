@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <Container maxWidth="sm">
-      <h1>URL Shortener</h1>
+      <h1>URL Shortcut</h1>
       <ShortenerForm />
     </Container>
     </>
