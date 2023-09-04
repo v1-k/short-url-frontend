@@ -21,13 +21,13 @@ function ShortenerForm() {
   const [showShortened, setShowShortened] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const domain = "http://stackapex.com/";
+  const domain = "https://stackapex.com/";
 
   const handleShorten = async () => {
     setLoading(true); // Start loading
     setErrorMessage('');
     try {
-      const response = await fetch('http://stackapex.com/create', {
+      const response = await fetch(`${domain}create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
