@@ -66,8 +66,13 @@ function ShortenerForm() {
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(shortenedUrl);
-      
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(shortenedUrl);
+        console.log('URL copied to clipboard');
+      } else {
+        // If clipboard API is not supported, provide an alternative method
+        console.log('Clipboard API not supported. You can manually copy the URL.');
+      }
     } catch (error) {
       console.error('Error copying to clipboard:', error);
     }
