@@ -22,7 +22,7 @@ function ShortenerForm() {
     setLoading(true); // Start loading
 
     try {
-      const response = await fetch('http://stackapex.com/create', {
+      const response = await fetch('http://localhost:8081/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
