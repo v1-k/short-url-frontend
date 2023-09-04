@@ -18,6 +18,8 @@ function ShortenerForm() {
   const [shortenedUrl, setShortenedUrl] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const domain = "http://stackapex.com/";
+
   const handleShorten = async () => {
     setLoading(true); // Start loading
 
@@ -32,7 +34,9 @@ function ShortenerForm() {
 
       if (response.ok) {
         const data = await response.json();
-        setShortenedUrl(data.shortenedUrl);
+        console.log(data);
+
+        setShortenedUrl(`${domain}${data.short_url}`);
       } else {
         throw new Error('Failed to shorten URL');
       }
