@@ -7,6 +7,7 @@ export default function TotalCount() {
     fetch('https://stackapex.com/r/total')
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         setTotal(data.total);
       })
       .catch((error) => {
